@@ -1,5 +1,5 @@
 import { AddDoctorComponent } from './add-doctor/add-doctor.component';
-import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { MatLegacyDialog as MatDialog, MatLegacyDialogConfig as MatDialogConfig } from '@angular/material/legacy-dialog';
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 
