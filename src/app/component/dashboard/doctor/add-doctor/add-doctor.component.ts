@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatLegacyDialogRef as MatDialogRef, MAT_LEGACY_DIALOG_DATA as MAT_DIALOG_DATA } from '@angular/material/legacy-dialog';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-add-doctor',
@@ -8,34 +8,63 @@ import { MatLegacyDialogRef as MatDialogRef, MAT_LEGACY_DIALOG_DATA as MAT_DIALO
   styleUrls: ['./add-doctor.component.scss']
 })
 export class AddDoctorComponent implements OnInit {
-  form!: FormGroup;
-  title!: string;
-  name!: string;
-  mobile!: number;
-  email!: string;
-  department!: number;
-  birthdate!: Date;
-  qualifications!: string;
-  departments: string[] = ['Orthodpedics', 'Cardiology', 'Otorhinolarynology'];
+
+  form !: FormGroup;
+  title !: string;
+  name !: string;
+  mobile !: string;
+  email !: string;
+  gender !: string;
+  department !: string;
+  shortBiography !: string;
+  education !: string;
+  birthdate !: Date;
+  qualification !: string;
+  id !: string;
+  buttonName !: string;
+
+  departments : string[] = ['Orthopedics','Cardiology','Otorhinolaryngology','Ophthalmology','Psychiatry','Internal medicine','Radiology','Surgery','Pediatrics','Neurology','Urology','Anesthesiology','Nephrology','Neurosurgery','Gastroenterology','Pulmonology','General surgery','Intensive care medicine','Oncology','Pathology','Emergency medicine','Neonatology','Hematology','Pharmacy','Physical medicine and rehabilitation','Vascular surgery','Geriatrics','Gynaecology','Cardiac surgery','Outpatient department','Nuclear medicine','Infectious diseases','Clinical pathology','Intensive care unit','operating room','Casualty department']
+
   constructor(
-    private fb: FormBuilder,
-    @Inject(MAT_DIALOG_DATA) data: any,
-    private dialogRef: MatDialogRef<AddDoctorComponent>
+    private fb : FormBuilder,
+    @Inject(MAT_DIALOG_DATA) data : any,
+    private dialogRef : MatDialogRef<AddDoctorComponent>
   ) {
       this.title = data.title;
-    }
+      this.id = data.id;
+      this.name = data.name;
+      this.mobile = data.mobile;
+      this.email = data.email;
+      this.gender = data.gender;
+      this.department = data.department;
+      this.shortBiography = data.shortBiography;
+      this.birthdate = data.birthdate;
+      this.education = data.education;
+      this.qualification = data.qualification;
+      this.buttonName = data.buttonName;
+   }
 
   ngOnInit(): void {
     this.form = this.fb.group({
-      id: ['', []],
-      name: ['', [Validators.required]],
-      mobile: ['', [Validators.required, Validators.maxLength(10), Validators.minLength(10)]],
-      email: ['', [Validators.required]],
-      gender: ['', [Validators.required]],
-      department: ['', [Validators.required]],
-      birthdate: ['', [Validators.required]],
-      qualifications: ['', [Validators.required]],
+      id: [this.id, []],
+      name : [this.name, [Validators.required]],
+      mobile : [this.mobile, [Validators.required, Validators.maxLength(10), Validators.minLength(10)]],
+      email : [this.email, [Validators.required, Validators.email]],
+      gender : [this.gender, [Validators.required]],
+      shortBiography : [this.shortBiography, Validators.nullValidator],
+      education : [this.education, Validators.nullValidator],
+      department : [this.department, [Validators.required]],
+      birthdate : [this.birthdate, [Validators.required]],
+      qualification : [this.qualification,[Validators.required]]
     })
+  }
+
+  cancelRegistration() {
+    this.dialogRef.close();
+  }
+
+  registerDoctor() {
+    this.dialogRef.close(this.form.value);
   }
 
 }

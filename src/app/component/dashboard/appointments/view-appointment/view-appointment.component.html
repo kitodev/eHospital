@@ -1,0 +1,22 @@
+<h2 style="font-weight: 700;" class="mt-3" color="primary">Appointment Information</h2>
+<mat-card class="m-3">
+
+  <mat-card-title class="pb-2">
+    Appointment Name : <b>{{appointmentObj?.appointment_name}}</b>
+  </mat-card-title>
+  <mat-divider></mat-divider>
+
+    <div class="row pt-3">
+      <div class="col-md-6">
+        <mat-card-content>
+          <span> Doctor Name : </span> {{appointmentObj.doctor_name}} <br>
+          <span> Mobile : </span> {{appointmentObj.mobile}} <br>
+        </mat-card-content>
+      </div>
+      <div class="col-md-6">
+       <mat-card-content>
+        <span> Visit Date : </span> {{appointmentObj.visit_time | date}}
+       </mat-card-content>
+      </div>
+    </div>
+</mat-card>
