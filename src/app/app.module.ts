@@ -30,6 +30,12 @@ import { AddPaymentsComponent } from './component/dashboard/payments/add-payment
 import { DeletePaymentsComponent } from './component/dashboard/payments/delete-payments/delete-payments.component';
 import { AgGridModule } from 'ag-grid-angular';
 import { CKEditorModule } from 'ckeditor4-angular';
+import { DocumentsComponent } from './component/dashboard/documents/documents.component';
+import { AddDocumentsComponent } from './component/dashboard/documents/add-documents/add-documents.component';
+import { ViewDocumentsComponent } from './component/dashboard/documents/view-documents/view-documents.component';
+import { DeleteDocumentsComponent } from './component/dashboard/documents/delete-documents/delete-documents.component';
+import { PackagelistComponent } from './component/dashboard/payments/packagelist/packagelist.component';
+import { AddPackagelistComponent } from './component/dashboard/payments/packagelist/add-packagelist/add-packagelist.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +56,13 @@ import { CKEditorModule } from 'ckeditor4-angular';
     ViewAppointmentComponent,
     PaymentsComponent,
     AddPaymentsComponent,
-    DeletePaymentsComponent
+    DeletePaymentsComponent,
+    DocumentsComponent,
+    AddDocumentsComponent,
+    ViewDocumentsComponent,
+    DeleteDocumentsComponent,
+    PackagelistComponent,
+    AddPackagelistComponent,
   ],
   imports: [
     BrowserModule,

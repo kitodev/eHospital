@@ -84,4 +84,16 @@ export class DataService {
     return this.afs.doc("Payments/"+id).delete();
   }
 
+  addDocuments(documents : any) {
+    documents.id = this.afs.createId();
+    return this.afs.collection("Documents/").add(documents);
+  }
+
+  getAllDocuments() {
+    return this.afs.collection("Documents/").snapshotChanges();
+  }
+
+  deleteDocuments(id: string) {
+    return this.afs.doc("Documents/"+id).delete();
+  }
 }

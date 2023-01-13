@@ -9,6 +9,9 @@ import { ViewPatientComponent } from './component/dashboard/patient/view-patient
 import { AuthguardGuard } from './shared/guard/authguard.guard';
 import { ViewAppointmentComponent } from './component/dashboard/appointments/view-appointment/view-appointment.component';
 import { PaymentsComponent } from './component/dashboard/payments/payments.component';
+import { DocumentsComponent } from './component/dashboard/documents/documents.component';
+import { ViewDocumentsComponent } from './component/dashboard/documents/view-documents/view-documents.component';
+import { PackagelistComponent } from './component/dashboard/payments/packagelist/packagelist.component';
 
 const routes: Routes = [
   {path : '', redirectTo : 'login', pathMatch : 'full'},
@@ -19,6 +22,9 @@ const routes: Routes = [
     {path : 'doctor', component: DoctorComponent},
     {path : 'payments', component: PaymentsComponent},
     {path : 'appointment', component: AppointmentsComponent},
+    {path : 'documents', component: DocumentsComponent},
+    {path : 'documents/:id', component: ViewDocumentsComponent },
+    {path : 'packagelist', component: PackagelistComponent},
     {path : 'appointment/:id', component: ViewAppointmentComponent },
     {path : 'doctor/:id', component: ViewDoctorComponent},
     {path : 'patient/:id', component: ViewPatientComponent},
