@@ -89,8 +89,6 @@ export class ViewDoctorComponent implements OnInit {
     dialogConfig.data.buttonName = "Update";
     dialogConfig.data.admission_date = row.admission_date.toDate();
 
-    console.log(dialogConfig.data);
-
     const dialogRef = this.dialog.open(AddPatientComponent, dialogConfig);
 
     dialogRef.afterClosed().subscribe(data => {

@@ -18,7 +18,7 @@ import { DeleteDocumentsComponent } from './delete-documents/delete-documents.co
 export class DocumentsComponent implements OnInit {
 
   documentsArr : any[] = [];
-  displayedColumns: string[] = ['name', 'created'];
+  displayedColumns: string[] = ['id', 'name', 'created', 'action'];
   dataSource!: MatTableDataSource<Documents>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -53,7 +53,7 @@ export class DocumentsComponent implements OnInit {
     })
   }
 
-  editDoctor(row : any) {
+  editDocuments(row : any) {
     if(row.id == null || row.name == null) {
       return;
     }
@@ -61,15 +61,14 @@ export class DocumentsComponent implements OnInit {
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
     dialogConfig.data = row;
-    dialogConfig.data.title = "Edit doctor";
+    dialogConfig.data.title = "Edit documents";
     dialogConfig.data.buttonName = "Update";
-    dialogConfig.data.birthdate = row.birthdate.toDate();
 
-    const dialogRef = this.dialog.open(AddDoctorComponent, dialogConfig);
+    const dialogRef = this.dialog.open(AddDocumentsComponent, dialogConfig);
 
     dialogRef.afterClosed().subscribe(data => {
       if(data) {
-        this.dataApi.updateDoctor(data);
+        this.dataApi.updateDocument(data);
         this.openSnackBar("Doctor is updated successfully.", "OK")
       }
     })

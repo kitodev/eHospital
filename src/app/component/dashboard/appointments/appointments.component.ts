@@ -108,8 +108,6 @@ export class AppointmentsComponent implements OnInit {
     dialogConfig.data.buttonName = "Update";
     dialogConfig.data.visit_time = row.visit_time.toDate();
 
-    console.log(dialogConfig.data);
-
     const dialogRef = this.dialog.open(AddAppointmentComponent, dialogConfig);
 
     dialogRef.afterClosed().subscribe(data => {

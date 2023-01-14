@@ -8,7 +8,7 @@ export class DataService {
 
   constructor(private afs : AngularFirestore) { }
 
-  addDoctor(doctor : any) {
+  addDoctor(doctor: any) {
     doctor.id = this.afs.createId();
     return this.afs.collection("Doctor/").add(doctor);
   }
@@ -17,15 +17,15 @@ export class DataService {
     return this.afs.collection("Doctor/").snapshotChanges();
   }
 
-  updateDoctor(doctor : any) {
+  updateDoctor(doctor: any) {
     return this.afs.doc("Doctor/"+doctor.id).update(doctor);
   }
 
-  deleteDoctor(id : string) {
+  deleteDoctor(id: string) {
     return this.afs.doc("Doctor/"+id).delete();
   }
 
-  getDoctorById(id : any) {
+  getDoctorById(id: any) {
     return this.afs.doc("Doctor/"+id).valueChanges();
   }
 
@@ -84,7 +84,7 @@ export class DataService {
     return this.afs.doc("Payments/"+id).delete();
   }
 
-  addDocuments(documents : any) {
+  addDocuments(documents: any) {
     documents.id = this.afs.createId();
     return this.afs.collection("Documents/").add(documents);
   }
@@ -93,7 +93,29 @@ export class DataService {
     return this.afs.collection("Documents/").snapshotChanges();
   }
 
+  updateDocument(documents: any) {
+    return this.afs.doc("Documents/"+documents.id).update(documents);
+  }
+
   deleteDocuments(id: string) {
     return this.afs.doc("Documents/"+id).delete();
   }
+
+  addPackagelist(packages: any) {
+    packages.id = this.afs.createId();
+    return this.afs.collection("Packagelist/").add(packages);
+  }
+
+  getAllPackagelist() {
+    return this.afs.collection("Packagelist/").snapshotChanges();
+  }
+
+  updatePackagelist(packagelist: any) {
+    return this.afs.doc("Packagelist/"+packagelist.id).update(packagelist);
+  }
+
+  deletePackagelist(id: string) {
+    return this.afs.doc("Packagelist/"+id).delete();
+  }
+
 }

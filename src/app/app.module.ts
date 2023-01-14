@@ -36,6 +36,8 @@ import { ViewDocumentsComponent } from './component/dashboard/documents/view-doc
 import { DeleteDocumentsComponent } from './component/dashboard/documents/delete-documents/delete-documents.component';
 import { PackagelistComponent } from './component/dashboard/payments/packagelist/packagelist.component';
 import { AddPackagelistComponent } from './component/dashboard/payments/packagelist/add-packagelist/add-packagelist.component';
+import { DeletePackagelistComponent } from './component/dashboard/payments/packagelist/delete-packagelist/delete-packagelist.component';
+import { ViewPackagelistComponent } from './component/dashboard/payments/packagelist/view-packagelist/view-packagelist.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +65,8 @@ import { AddPackagelistComponent } from './component/dashboard/payments/packagel
     DeleteDocumentsComponent,
     PackagelistComponent,
     AddPackagelistComponent,
+    DeletePackagelistComponent,
+    ViewPackagelistComponent,
   ],
   imports: [
     BrowserModule,

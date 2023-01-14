@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { DataService } from 'src/app/shared/service/data.service';
 
@@ -12,27 +12,42 @@ export class AddPackagelistComponent implements OnInit {
 
   form !: FormGroup;
   title !: string;
+  id !: string;
+  package_name !: string;
+  description !: string;
+  discount !: string;
+  status !: boolean;
   buttonName !: string;
 
   constructor(
     private fb : FormBuilder,
-    private dataApi : DataService,
     @Inject(MAT_DIALOG_DATA) data : any,
     private dialogRef : MatDialogRef<AddPackagelistComponent>
   ) {
-
       this.title = data.title;
+      this.id = data.id;
+      this.package_name = data.package_name;
+      this.description = data.description;
+      this.discount = data.discount;
+      this.status = data.status;
+      this.buttonName = data.buttonName;
    }
 
   ngOnInit(): void {
+    this.form = this.fb.group({
+      id: [this.id, []],
+      package_name: [this.package_name, [Validators.required]],
+      description: [this.description, [Validators.required]],
+      discount: [this.discount, [Validators.required]],
+      status: [this.status, [Validators.required]],
+    })
   }
 
   cancelPackageList() {
     this.dialogRef.close();
   }
 
-  async registerPackageList() {
-    //this.form.value.doctor_name = await this.getDoctorName(this.form.value.id);
+  registerPackageList() {
     this.dialogRef.close(this.form.value);
   }
 }

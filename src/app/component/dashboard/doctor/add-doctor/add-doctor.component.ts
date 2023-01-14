@@ -47,15 +47,15 @@ export class AddDoctorComponent implements OnInit {
   ngOnInit(): void {
     this.form = this.fb.group({
       id: [this.id, []],
-      name : [this.name, [Validators.required]],
-      mobile : [this.mobile, [Validators.required, Validators.maxLength(10), Validators.minLength(10)]],
-      email : [this.email, [Validators.required, Validators.email]],
-      gender : [this.gender, [Validators.required]],
-      shortBiography : [this.shortBiography, Validators.nullValidator],
-      education : [this.education, Validators.nullValidator],
-      department : [this.department, [Validators.required]],
-      birthdate : [this.birthdate, [Validators.required]],
-      qualification : [this.qualification,[Validators.required]]
+      name: [this.name, [Validators.required]],
+      mobile: [this.mobile, [Validators.required, Validators.maxLength(10), Validators.minLength(10)]],
+      email: [this.email, [Validators.required, Validators.email]],
+      gender: [this.gender, [Validators.required]],
+      shortBiography: [this.shortBiography, Validators.nullValidator],
+      education: [this.education, Validators.nullValidator],
+      department: [this.department, [Validators.required]],
+      birthdate: [this.birthdate, [Validators.required]],
+      qualification: [this.qualification,[Validators.required]]
     })
   }
 

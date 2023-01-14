@@ -7,15 +7,51 @@
 
       <mat-grid-tile>
         <div>
-          <mat-form-field>
-            <mat-label>Bill No</mat-label>
+          <!-- <mat-form-field>
+            <mat-label>SR No</mat-label>
             <input matInput
-                    placeholder="14544458548"
-                    formControlName="bill_no"
+                    placeholder="14544"
+                    formControlName="sr_no"
                     required>
-            <mat-error *ngIf="form.get('bill_no')?.invalid || form.get('bill_no')?.dirty || form.get('bill_no')?.touched">Enter Bill No</mat-error>
-          </mat-form-field>
+            <mat-error *ngIf="form.get('sr_no')?.invalid || form.get('sr_no')?.dirty || form.get('sr_no')?.touched">Enter SR No</mat-error>
+          </mat-form-field> -->
 
+          <mat-form-field>
+            <mat-label>Package name</mat-label>
+            <input matInput
+                    placeholder="Student"
+                    formControlName="package_name"
+                    required>
+            <mat-error *ngIf="form.get('package_name')?.invalid || form.get('package_name')?.dirty || form.get('package_name')?.touched">Enter package name</mat-error>
+          </mat-form-field>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div>
+          <mat-form-field>
+            <mat-label>Discount</mat-label>
+            <input matInput
+                    placeholder="Discount"
+                    formControlName="discount"
+                    required>
+            <mat-error *ngIf="form.get('discount')?.invalid || form.get('discount')?.dirty || form.get('discount')?.touched">Enter discount</mat-error>
+          </mat-form-field>
+          <br>
+          <mat-label class="me-3">Status: </mat-label>
+          <br>
+          <mat-radio-group aria-label="Select a status" color="primary" formControlName="status">
+            <mat-radio-button value="true">Active</mat-radio-button>
+            <mat-radio-button value="false">Inactive</mat-radio-button>
+          </mat-radio-group>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div>
+          <mat-label>Description</mat-label>
+          <ckeditor
+              name="description"
+              formControlName="description"
+          ></ckeditor>
         </div>
       </mat-grid-tile>
     </mat-grid-list>
