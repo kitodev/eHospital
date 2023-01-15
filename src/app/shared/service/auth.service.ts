@@ -7,12 +7,14 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
 
+  error: any;
+
   constructor(
-    private auth : AngularFireAuth,
-    private router : Router
+    private auth: AngularFireAuth,
+    private router: Router
   ) { }
 
-  login(username : string, password : string) {
+  login(username: string, password: string) {
     this.auth
       .signInWithEmailAndPassword(username ,password)
       .then(result => {
@@ -24,14 +26,29 @@ export class AuthService {
           }
         })
       })
-      .catch( error => {
-        console.log(error);
+      .catch( err => {
+        this.error = err;
+        console.log('Error', this.error);
       })
+  }
+
+  signUp(email: string, password: string) {
+    this.auth.createUserWithEmailAndPassword(email, password)
+    .then( result => {
+      this.auth.authState.subscribe(async user => {
+        this.router.navigate(['/login']);
+        location.reload();
+      })
+    })
+    .catch( err => {
+      this.error = err;
+      console.log('Error', this.error);
+    })
   }
 
   async logout() {
     localStorage.setItem('user','null');
-    await this.router.navigate(['']);
+    await this.router.navigate(['/login']);
     location.reload();
   }
 

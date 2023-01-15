@@ -38,6 +38,8 @@ import { PackagelistComponent } from './component/dashboard/payments/packagelist
 import { AddPackagelistComponent } from './component/dashboard/payments/packagelist/add-packagelist/add-packagelist.component';
 import { DeletePackagelistComponent } from './component/dashboard/payments/packagelist/delete-packagelist/delete-packagelist.component';
 import { ViewPackagelistComponent } from './component/dashboard/payments/packagelist/view-packagelist/view-packagelist.component';
+import { EmailComponent } from './component/auth/email/email.component';
+import { SignupComponent } from './component/auth/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -67,6 +69,8 @@ import { ViewPackagelistComponent } from './component/dashboard/payments/package
     AddPackagelistComponent,
     DeletePackagelistComponent,
     ViewPackagelistComponent,
+    EmailComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,

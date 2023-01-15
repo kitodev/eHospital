@@ -23,6 +23,7 @@
                     type="password">
             <mat-error *ngIf="form.get('password')?.invalid || form.get('password')?.dirty || form.get('password')?.touched">Enter valid qualification </mat-error>
           </mat-form-field>
+          <span class="error" *ngIf="error"> {{ error }}</span>
       </div>
 
       <div >
@@ -30,7 +31,8 @@
       </div>
 
     </mat-card>
-
+    <br>
+    <a routerLink="/signup" routerLinkActive="active">No account? <strong>Create one here</strong></a>
   </div>
   <div class="col"></div>
 </div>

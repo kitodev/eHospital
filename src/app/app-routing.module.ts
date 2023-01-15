@@ -12,6 +12,7 @@ import { PaymentsComponent } from './component/dashboard/payments/payments.compo
 import { DocumentsComponent } from './component/dashboard/documents/documents.component';
 import { ViewDocumentsComponent } from './component/dashboard/documents/view-documents/view-documents.component';
 import { PackagelistComponent } from './component/dashboard/payments/packagelist/packagelist.component';
+import { SignupComponent } from './component/auth/signup/signup.component';
 
 const routes: Routes = [
   {path : '', redirectTo : 'login', pathMatch : 'full'},
@@ -29,7 +30,8 @@ const routes: Routes = [
     {path : 'doctor/:id', component: ViewDoctorComponent},
     {path : 'patient/:id', component: ViewPatientComponent},
   ], canActivate: [AuthguardGuard]},
-  {path : 'login', component : LoginComponent}
+  {path : 'login', component : LoginComponent},
+  {path : 'signup', component : SignupComponent}
 ];
 
 @NgModule({
