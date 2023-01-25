@@ -1,8 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { DataService } from 'src/app/shared/service/data.service';
-
 @Component({
   selector: 'app-add-packagelist',
   templateUrl: './add-packagelist.component.html',
@@ -37,7 +35,7 @@ export class AddPackagelistComponent implements OnInit {
     this.form = this.fb.group({
       id: [this.id, []],
       package_name: [this.package_name, [Validators.required]],
-      description: [this.description, [Validators.required]],
+      description: [this.description, [Validators.nullValidator]],
       discount: [this.discount, [Validators.required]],
       status: [this.status, [Validators.required]],
     })

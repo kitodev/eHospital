@@ -1,3 +1,4 @@
+import { MatTableModule } from '@angular/material/table';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -40,6 +41,8 @@ import { DeletePackagelistComponent } from './component/dashboard/payments/packa
 import { ViewPackagelistComponent } from './component/dashboard/payments/packagelist/view-packagelist/view-packagelist.component';
 import { EmailComponent } from './component/auth/email/email.component';
 import { SignupComponent } from './component/auth/signup/signup.component';
+import { InvoiceComponent } from './component/dashboard/invoice/invoice.component';
+import { MatSortModule } from '@angular/material/sort';
 
 @NgModule({
   declarations: [
@@ -71,6 +74,7 @@ import { SignupComponent } from './component/auth/signup/signup.component';
     ViewPackagelistComponent,
     EmailComponent,
     SignupComponent,
+    InvoiceComponent,
   ],
   imports: [
     BrowserModule,
@@ -80,6 +84,8 @@ import { SignupComponent } from './component/auth/signup/signup.component';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
     MaterialModule,
+    MatTableModule,
+    MatSortModule,
     MatTableExporterModule,
     ReactiveFormsModule,
     CKEditorModule,

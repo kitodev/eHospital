@@ -15,6 +15,13 @@
                     required>
             <mat-error *ngIf="form.get('name')?.invalid || form.get('name')?.dirty || form.get('patient_name')?.touched">Enter document name</mat-error>
           </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>File name</mat-label>
+            <ngx-mat-file-input matInput formControlName="file" placeholder="Basic Input" ></ngx-mat-file-input>
+            <mat-icon matSuffix>folder</mat-icon>
+            <mat-error *ngIf="form.get('file')?.invalid || form.get('file')?.dirty || form.get('file')?.touched">Please select the file</mat-error>
+          </mat-form-field>
         </div>
       </mat-grid-tile>
 

@@ -2,15 +2,14 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { MatSort } from '@angular/material/sort';
+import { MatSort, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Doctor } from 'src/app/shared/model/doctor';
 import { Patient } from 'src/app/shared/model/patient';
 import { DataService } from 'src/app/shared/service/data.service';
 import { AddPatientComponent } from './add-patient/add-patient.component';
 import { DeletePatientComponent } from './delete-patient/delete-patient.component';
-import { ColDef, GridReadyEvent } from 'ag-grid-community';
-import { Observable } from 'rxjs';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-patient',
@@ -30,7 +29,7 @@ export class PatientComponent implements OnInit {
   constructor(
     public dialog : MatDialog,
     private dataApi : DataService,
-    private _snackBar : MatSnackBar
+    private _snackBar : MatSnackBar,
   ) { }
 
 

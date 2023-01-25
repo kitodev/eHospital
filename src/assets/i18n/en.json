@@ -1,0 +1,13 @@
+{
+  "locale": "en-US",
+  "lang": {
+    "langChange": "Change Language",
+    "en": "English",
+    "hu": "Hungarian"
+  },
+  "auth": {
+    "login": "Log In",
+    "email": "Email",
+    "password": "Password"
+  }
+}

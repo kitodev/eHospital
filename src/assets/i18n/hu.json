@@ -1,0 +1,14 @@
+{
+  "locale": "hu-HU",
+  "lang": {
+    "changeLanguage": "Nyelv váltása",
+    "hu": "Magyar",
+    "en": "Angol"
+  },
+  "auth": {
+    "login": "Bejelentkezés",
+    "email": "Email cím",
+    "password": "Jelszó",
+    "forgotpass": "Elfelejtett jelszó"
+  }
+}

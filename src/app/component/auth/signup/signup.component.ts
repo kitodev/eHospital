@@ -20,18 +20,16 @@ export class SignupComponent implements OnInit {
     private fb: FormBuilder
   ) {
     this.form = this.fb.group({
+      username: [this.username, [Validators.required, Validators.required]],
       email: [this.email, [Validators.required, Validators.email]],
       password: [this.password, [Validators.required]]
     })
-
-    console.log(this.form);
   }
 
   ngOnInit(): void {
   }
 
   signUp() {
-    console.log('SIGN UP FIRED');
     this.authApi.signUp(this.form.value.email, this.form.value.password);
   }
 }

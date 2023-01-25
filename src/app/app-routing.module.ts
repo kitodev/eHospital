@@ -13,6 +13,7 @@ import { DocumentsComponent } from './component/dashboard/documents/documents.co
 import { ViewDocumentsComponent } from './component/dashboard/documents/view-documents/view-documents.component';
 import { PackagelistComponent } from './component/dashboard/payments/packagelist/packagelist.component';
 import { SignupComponent } from './component/auth/signup/signup.component';
+import { InvoiceComponent } from './component/dashboard/invoice/invoice.component';
 
 const routes: Routes = [
   {path : '', redirectTo : 'login', pathMatch : 'full'},
@@ -24,6 +25,7 @@ const routes: Routes = [
     {path : 'payments', component: PaymentsComponent},
     {path : 'appointment', component: AppointmentsComponent},
     {path : 'documents', component: DocumentsComponent},
+    {path : 'invoice/:id', component: InvoiceComponent},
     {path : 'documents/:id', component: ViewDocumentsComponent },
     {path : 'packagelist', component: PackagelistComponent},
     {path : 'appointment/:id', component: ViewAppointmentComponent },

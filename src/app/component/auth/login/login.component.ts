@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
   email: any = '';
   password: any = '';
   error: any = '';
+  public showPassword: boolean = false;
 
   constructor(
     private authApi: AuthService,
@@ -22,6 +23,10 @@ export class LoginComponent implements OnInit {
       email: [this.email, [Validators.required, Validators.email]],
       password: [this.password, [Validators.required]]
     })
+  }
+
+  public togglePassVisible(): void {
+    this.showPassword = !this.showPassword;
   }
 
   ngOnInit(): void {

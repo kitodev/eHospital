@@ -6,7 +6,6 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { DataService } from 'src/app/shared/service/data.service';
 import { AddDocumentsComponent } from './add-documents/add-documents.component';
-import { AddDoctorComponent } from '../doctor/add-doctor/add-doctor.component';
 import { Documents } from 'src/app/shared/model/documents';
 import { DeleteDocumentsComponent } from './delete-documents/delete-documents.component';
 
@@ -18,7 +17,7 @@ import { DeleteDocumentsComponent } from './delete-documents/delete-documents.co
 export class DocumentsComponent implements OnInit {
 
   documentsArr : any[] = [];
-  displayedColumns: string[] = ['id', 'name', 'created', 'action'];
+  displayedColumns: string[] = ['name', 'created', 'action'];
   dataSource!: MatTableDataSource<Documents>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;

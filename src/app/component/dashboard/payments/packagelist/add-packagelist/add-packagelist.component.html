@@ -1,21 +1,12 @@
 <h2 mat-dialog-tile> {{ title }} </h2>
 <mat-divider></mat-divider>
 
-<mat-dialog-content [formGroup] = "form">
+<mat-dialog-content [formGroup]="form">
 
     <mat-grid-list cols="2">
 
       <mat-grid-tile>
         <div>
-          <!-- <mat-form-field>
-            <mat-label>SR No</mat-label>
-            <input matInput
-                    placeholder="14544"
-                    formControlName="sr_no"
-                    required>
-            <mat-error *ngIf="form.get('sr_no')?.invalid || form.get('sr_no')?.dirty || form.get('sr_no')?.touched">Enter SR No</mat-error>
-          </mat-form-field> -->
-
           <mat-form-field>
             <mat-label>Package name</mat-label>
             <input matInput
@@ -24,10 +15,6 @@
                     required>
             <mat-error *ngIf="form.get('package_name')?.invalid || form.get('package_name')?.dirty || form.get('package_name')?.touched">Enter package name</mat-error>
           </mat-form-field>
-        </div>
-      </mat-grid-tile>
-      <mat-grid-tile>
-        <div>
           <mat-form-field>
             <mat-label>Discount</mat-label>
             <input matInput
@@ -45,17 +32,16 @@
           </mat-radio-group>
         </div>
       </mat-grid-tile>
-      <mat-grid-tile>
-        <div>
-          <mat-label>Description</mat-label>
-          <ckeditor
-              name="description"
-              formControlName="description"
-          ></ckeditor>
-        </div>
-      </mat-grid-tile>
     </mat-grid-list>
-
+    <div>
+      <mat-label>Description:</mat-label>
+      <br>
+      <br>
+      <ckeditor
+          name="description"
+          formControlName="description"
+      ></ckeditor>
+    </div>
 </mat-dialog-content>
 
 <div mat-dialog-actions>

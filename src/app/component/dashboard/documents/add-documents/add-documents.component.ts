@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { DataService } from 'src/app/shared/service/data.service';
+import { FileValidator } from 'ngx-material-file-input';
 
 @Component({
   selector: 'app-add-documents',
@@ -12,24 +12,33 @@ export class AddDocumentsComponent implements OnInit {
 
   form !: FormGroup;
   title !: string;
+  id !: string;
   name !: string;
+  file !: any;
   buttonName !: string;
+  readonly maxSize = 104857600;
 
   constructor(
     private fb : FormBuilder,
     @Inject(MAT_DIALOG_DATA) data : any,
     private dialogRef : MatDialogRef<AddDocumentsComponent>,
-    private dataApi : DataService
   ) {
       this.name = data.name;
+      this.id = data.id;
+      this.file = data.file;
   }
 
   ngOnInit(): void {
-    //this.getAllDoctors();
     this.form = this.fb.group({
-      //patient_id: [this.patient_id, []],
+      id: [this.id, []],
+      file: [this.file, [Validators.required, FileValidator.maxContentSize(this.maxSize)]],
       patient_name : [this.name, [Validators.required]],
     })
+  }
+
+  getFile(event: any) {
+    this.file = event.target.files[0];
+    console.log(this.file);
   }
 
   cancelDocument() {
@@ -37,7 +46,6 @@ export class AddDocumentsComponent implements OnInit {
   }
 
   async registerDocument() {
-    //this.form.value.doctor_name = await this.getDoctorName(this.form.value.id);
     this.dialogRef.close(this.form.value);
   }
 

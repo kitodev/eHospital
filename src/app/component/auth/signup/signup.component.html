@@ -3,7 +3,7 @@
   <div class="col">
 
     <mat-card>
-      <div [formGroup] = "form">
+      <div [formGroup]="form">
           <mat-card-title>SignUp</mat-card-title>
           <mat-form-field>
             <mat-label>Email</mat-label>
@@ -14,14 +14,14 @@
             <mat-error *ngIf="form.get('email')?.invalid || form.get('email')?.dirty || form.get('email')?.touched">Enter email address </mat-error>
           </mat-form-field>
 
-          <!-- <mat-form-field>
+          <mat-form-field>
             <mat-label>Username</mat-label>
             <input matInput
                     placeholder="Derek"
                     formControlName="username"
                     required>
             <mat-error *ngIf="form.get('username')?.invalid || form.get('username')?.dirty || form.get('username')?.touched">Username required </mat-error>
-          </mat-form-field> -->
+          </mat-form-field>
 
           <mat-form-field>
             <mat-label>Password</mat-label>

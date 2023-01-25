@@ -4,6 +4,12 @@
   "newProjectRoot": "projects",
   "projects": {
     "hospital-management": {
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+          "hu-HU": "src/locale/messages.hu.xlf"
+        }
+      },
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,6 +19,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "localize": ["hu-HU"],
             "outputPath": "dist/hospital-management",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -23,7 +30,7 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -91,7 +98,7 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "src/styles.scss"
             ],
             "scripts": []

@@ -57,6 +57,14 @@
 
           <mat-form-field class="mt-4">
             <mat-label>Department</mat-label>
+            <!-- <mat-select formControlName="department" placeholder="Bank" #singleSelect>
+              <mat-option>
+                <ngx-mat-select-search formControlName="department"></ngx-mat-select-search>
+              </mat-option>
+              <mat-option *ngFor="let department of departments" [value]="department">
+                {{ departments }}
+              </mat-option>
+            </mat-select> -->
             <mat-select formControlName="department" name="department">
               <mat-option *ngFor="let department of departments" [value]="department">
                 {{department}}
@@ -77,13 +85,17 @@
       </mat-grid-tile>
     </mat-grid-list>
     <div>
-      <mat-label>Biography</mat-label>
+      <mat-label>Biography:</mat-label>
+      <br>
+      <br>
       <ckeditor
         name="shortBiography"
         formControlName="shortBiography"
       ></ckeditor>
-
-      <mat-label>Education/Degree</mat-label>
+      <br>
+      <mat-label>Education/Degree:</mat-label>
+      <br>
+      <br>
       <ckeditor
         name="education"
         formControlName="education"
