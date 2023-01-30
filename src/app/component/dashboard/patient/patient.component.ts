@@ -6,10 +6,10 @@ import { MatSort, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Doctor } from 'src/app/shared/model/doctor';
 import { Patient } from 'src/app/shared/model/patient';
+//import { Chart } from 'angular-highcharts';
 import { DataService } from 'src/app/shared/service/data.service';
 import { AddPatientComponent } from './add-patient/add-patient.component';
 import { DeletePatientComponent } from './delete-patient/delete-patient.component';
-import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-patient',

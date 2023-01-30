@@ -5,7 +5,7 @@ import { DataService } from 'src/app/shared/service/data.service';
 @Component({
   selector: 'app-view-patient',
   templateUrl: './view-patient.component.html',
-  styleUrls: ['./view-patient.component.css']
+  styleUrls: ['./view-patient.component.scss']
 })
 export class ViewPatientComponent implements OnInit {
   patient_id !: any;

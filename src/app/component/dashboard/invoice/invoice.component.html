@@ -1,114 +1,84 @@
-<div class="body" style="margin-top: 7.3%;">
-  <div class="page" size="A4" id="pdf">
-      <!-- <button (click)="goBack()" class="btn btn-primary" style="margin-top: 5px; margin-left: 300px;">Back</button>
-      <button (click)="goHome()" class="btn btn-primary" style="margin-top: 5px; margin-left: 5px;">Home</button>
-      <button (click)="print()" class="btn btn-primary" style="margin-top: 5px; margin-left: 5px;">Print</button> -->
-          <div class="p-5">
-              <section class="top-content bb d-flex justify-content-between">
-                  <!-- <div class="logo">
-                      <img src="logo.png" alt="" class="img-fluid">
-                  </div> -->
-                  <div class="top-left">
-                      <!-- <div class="graphic-path">
-                          <p>Invoice</p>
-                      </div> -->
-                      <div class="position-relative">
-                          <p><b> Invoice No. <span> 1 </span></b></p>
-                      </div>
-                  </div>
-              </section>
+<div class="container">
 
-              <section class="store-user mt-5">
-                  <div class="col-10">
-                      <div class="row bb pb-3">
-                          <div class="col-7">
-                              <p>Doctor,</p>
-                              <h2> Dr. Bill atkonson</h2>
-                              <p class="address"> Address</p>
-                              <div class="txn mt-2">+91 1255554 </div>
-                              <!-- <div class="txn mt-2"> {{spec.speciality}} </div> -->
-                          </div>
-                          <div class="col-5">
-                              <p>Patient,</p>
-                              <h2> Tim Brandon </h2>
-                              <p class="address"> Addrison Campage 3 </p>
-                              <div class="txn mt-2">+91 54454554 </div>
-                          </div>
-                      </div>
-                      <div class="row extra-info pt-3">
-                          <div class="col-7">
-                              <p>Doctor ID: <span> 125 </span></p>
-                          </div>
-                          <div class="col-5">
-                              <p>Date of Birth: <span> 1991.07.07 </span></p>
-                              <p>Patient ID: <span> 12544545252 </span></p>
-                          </div>
-                      </div>
-                  </div>
-              </section>
-
-              <section class="product-area mt-4">
-                  <table class="table table-hover">
-                      <thead>
-                          <tr>
-                              <td>Item Description</td>
-                              <td>Price</td>
-                              <td>Quantity</td>
-                              <td>Total</td>
-                          </tr>
-                      </thead>
-                      <tbody>
-                          <tr *ngFor="let med of medList">
-                              <td>
-                                  <div class="media">
-                                      <div class="media-body">
-                                          <p class="mt-0 title"> 1 </p>
-                                      </div>
-                                  </div>
-                              </td>
-                              <td> 125 </td>
-                              <td> 55 </td>
-                              <td> 1523 </td>
-                          </tr>
-                      </tbody>
-                  </table>
-              </section>
-
-              <section class="balance-info">
-                  <div class="row">
-                      <div class="col-8">
-                          <p class="m-0 font-weight-bold"> Note: </p>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. In delectus, adipisci vero est dolore praesentium.</p>
-                      </div>
-                      <div class="col-4">
-                          <table class="table border-0 table-hover">
-                              <tr>
-                                  <td>Treatment Charge:</td>
-                                  <td> 1022 </td>
-                              </tr>
-                              <tr>
-                                  <td>Med Total:</td>
-                                  <td> 152 </td>
-                              </tr>
-                              <tr>
-                                  <td>Tax:</td>
-                                  <td>Null</td>
-                              </tr>
-                              <tfoot>
-                                  <tr style="font-size: 25px;">
-                                      <td>Total:</td>
-                                      <td>2252525252</td>
-                                  </tr>
-                              </tfoot>
-                          </table>
-                          <br><br><br>
-                          <!-- Signature -->
-                          <div class="col-12">
-                              <p class="text-center m-0"> Signature </p>
-                          </div>
-                      </div>
-                  </div>
-              </section>
-          </div>
-      </div>
+  <div class="row">
+    <div class="col-sm-6 col-md-4 mt-3">
+      <mat-card class="add-doc text-center" (click)="addInvoices()">
+        <mat-card-content>
+          Add Invoices <br>
+          <mat-icon>receipt_long</mat-icon>
+        </mat-card-content>
+      </mat-card>
+    </div>
   </div>
+
+    <!-- Patient table -->
+    <h2 style="font-weight: 700;" class="mt-4" color="primary">Invoice Information</h2>
+    <!-- <mat-form-field appearance="standard">
+      <mat-label>Filter</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Ex. code logic" #input>
+    </mat-form-field> -->
+
+    <div class="mat-elevation-z8">
+      <table mat-table [dataSource]="dataSource" matSort>
+
+        <!-- Description Column -->
+        <ng-container matColumnDef="description">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header="description"> Description </th>
+          <td mat-cell *matCellDef="let row"> {{row.description}} </td>
+        </ng-container>
+
+        <!-- Price Column -->
+        <ng-container matColumnDef="price">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header="price"> Price </th>
+          <td mat-cell *matCellDef="let row"> {{row.price}} </td>
+        </ng-container>
+
+        <!-- Quantity Column -->
+        <ng-container matColumnDef="quantity">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header="quantity"> Quantity </th>
+          <td mat-cell *matCellDef="let row"> {{row.quantity}} </td>
+        </ng-container>
+
+        <!-- Total Column -->
+        <ng-container matColumnDef="total">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header="quantity"> Total </th>
+          <td mat-cell *matCellDef="let row"> {{row.total}} </td>
+        </ng-container>
+
+
+        <!-- Action Column -->
+        <ng-container matColumnDef="action">
+          <th mat-header-cell *matHeaderCellDef> Action </th>
+          <td mat-cell *matCellDef="let row">
+            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item (click)="viewInvoice(row)">
+                <mat-icon>open_in_new</mat-icon>
+                <span>View</span>
+              </button>
+              <button mat-menu-item (click)="editInvoice(row)">
+                <mat-icon>edit</mat-icon>
+                <span>Edit</span>
+              </button>
+              <button mat-menu-item (click)="deleteInvoice(row)">
+                <mat-icon>delete</mat-icon>
+                <span>Delete</span>
+              </button>
+            </mat-menu>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+        <!-- Row shown when there is no matching data. -->
+        <!-- <tr class="mat-row" *matNoDataRow>
+          <td class="mat-cell" colspan="4" i18n>No data matching the filter "{{input.value}}"</td>
+        </tr> -->
+      </table>
+
+      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+    </div>
+</div>
