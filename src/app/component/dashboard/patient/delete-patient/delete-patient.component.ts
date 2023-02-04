@@ -15,7 +15,6 @@ export class DeletePatientComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) data : any,
     private dialogRef : MatDialogRef<DeletePatientComponent>
   ) {
-    console.log(data);
     this.patientName = data.patientName;
     this.title = data.title;
   }

@@ -21,6 +21,16 @@
     <div class="mat-elevation-z8">
       <table mat-table [dataSource]="dataSource" matSort>
 
+        <ng-container matColumnDef="selectrow">
+          <th mat-header-cell *matHeaderCellDef="selectrow">
+            <mat-checkbox (change)="selectAll()"></mat-checkbox>
+          </th>
+          <td mat-cell *matCellDef="let row">
+            <mat-checkbox [checked]="row.isChecked"></mat-checkbox>
+          </td>
+          <td mat-footer-cell *matFooterCellDef></td>
+        </ng-container>
+
         <!-- Name Column -->
         <ng-container matColumnDef="name">
           <th mat-header-cell *matHeaderCellDef mat-sort-header="name"> Name </th>

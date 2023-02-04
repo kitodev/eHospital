@@ -15,7 +15,6 @@ export class AppComponent {
     private authApi : AuthService,
     private titleService: Title
   ) {
-      this.titleService.setTitle($localize`${this.title}`);
     }
 
   ngOnInit() {

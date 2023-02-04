@@ -1,8 +1,6 @@
 <div class="body" style="margin-top: 7.3%;">
   <div class="page" size="A4" id="pdf">
-      <!-- <button (click)="goBack()" class="btn btn-primary" style="margin-top: 5px; margin-left: 300px;">Back</button>
-      <button (click)="goHome()" class="btn btn-primary" style="margin-top: 5px; margin-left: 5px;">Home</button>
-      <button (click)="print()" class="btn btn-primary" style="margin-top: 5px; margin-left: 5px;">Print</button> -->
+      <button (click)="print()" class="btn btn-primary" style="margin-top: 5px; margin-left: 5px;">Print</button>
           <div class="p-5">
               <section class="top-content bb d-flex justify-content-between">
                   <div class="top-left">
@@ -52,17 +50,11 @@
                           </tr>
                       </thead>
                       <tbody>
-                          <tr *ngFor="let med of medList">
-                              <td>
-                                  <div class="media">
-                                      <div class="media-body">
-                                          <p class="mt-0 title"> 1 </p>
-                                      </div>
-                                  </div>
-                              </td>
-                              <td> 125 </td>
-                              <td> 55 </td>
-                              <td> 1523 </td>
+                          <tr>
+                              <td>{{ invoiceObj.description }}</td>
+                              <td>{{ invoiceObj.price }}</td>
+                              <td>{{ invoiceObj.quantity }}</td>
+                              <td>{{ invoiceObj.total }}</td>
                           </tr>
                       </tbody>
                   </table>
@@ -72,7 +64,7 @@
                   <div class="row">
                       <div class="col-8">
                           <p class="m-0 font-weight-bold"> Note: </p>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. In delectus, adipisci vero est dolore praesentium.</p>
+                          <p>{{ invoiceObj.note }}</p>
                       </div>
                       <div class="col-4">
                           <table class="table border-0 table-hover">
@@ -91,7 +83,7 @@
                               <tfoot>
                                   <tr style="font-size: 25px;">
                                       <td>Total:</td>
-                                      <td>2252525252</td>
+                                      <td>{{ invoiceObj.total }}</td>
                                   </tr>
                               </tfoot>
                           </table>

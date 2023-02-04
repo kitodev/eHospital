@@ -28,7 +28,6 @@ export class AuthService {
       })
       .catch( err => {
         this.error = err;
-        console.log('Error', this.error);
       })
   }
 
@@ -42,12 +41,13 @@ export class AuthService {
     })
     .catch( err => {
       this.error = err;
-      console.log('Error', this.error);
     })
   }
 
   async logout() {
     localStorage.setItem('user','null');
+    localStorage.removeItem('user');
+    localStorage.removeItem('token_value');
     await this.router.navigate(['/login']);
     location.reload();
   }

@@ -16,6 +16,7 @@ export class AddPatientComponent implements OnInit {
   mobile !: string;
   gender !: string;
   admission_date !: Date;
+  birthdate !: Date;
   prescription !: string;
   patient_id !: string;
   buttonName !: string;
@@ -37,6 +38,7 @@ export class AddPatientComponent implements OnInit {
       this.mobile = data.mobile;
       this.gender = data.gender;
       this.admission_date = data.admission_date;
+      this.birthdate = data.birthdate;
       this.prescription = data.prescription;
       this.buttonName = data.buttonName;
       this.doctor_id = data.doctor_id;
@@ -52,6 +54,7 @@ export class AddPatientComponent implements OnInit {
       gender : [this.gender, [Validators.required]],
       doctor_id : [this.doctor_id, [Validators.required]],
       doctor_name : [this.doctor_name, []],
+      birthdate : [this.birthdate, [Validators.required]],
       admission_date : [this.admission_date, [Validators.required]],
       prescription : [this.prescription, [Validators.required]]
     })

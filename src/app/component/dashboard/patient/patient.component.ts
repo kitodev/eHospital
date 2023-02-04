@@ -6,7 +6,6 @@ import { MatSort, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Doctor } from 'src/app/shared/model/doctor';
 import { Patient } from 'src/app/shared/model/patient';
-//import { Chart } from 'angular-highcharts';
 import { DataService } from 'src/app/shared/service/data.service';
 import { AddPatientComponent } from './add-patient/add-patient.component';
 import { DeletePatientComponent } from './delete-patient/delete-patient.component';
@@ -20,7 +19,7 @@ export class PatientComponent implements OnInit {
 
   allPatients : Patient[] = [];
   allDoctors : Doctor[] = [];
-  displayedColumns: string[] = ['name', 'mobile', 'doctor', 'gender','action'];
+  displayedColumns: string[] = ['selectrow', 'name', 'mobile', 'doctor', 'gender','action'];
   dataSource!: MatTableDataSource<Patient>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -92,7 +91,7 @@ export class PatientComponent implements OnInit {
   }
 
   viewPatient(row : any) {
-    window.open('/dashboard/patient/'+row.patient_id,'_blank');
+    window.open('/patient/'+row.patient_id,'_blank');
   }
 
   editPatient(row : any) {
@@ -106,8 +105,7 @@ export class PatientComponent implements OnInit {
     dialogConfig.data.title = "Edit patient";
     dialogConfig.data.buttonName = "Update";
     dialogConfig.data.admission_date = row.admission_date.toDate();
-
-    console.log(dialogConfig.data);
+    dialogConfig.data.birthdate = row.birthdate.toDate();
 
     const dialogRef = this.dialog.open(AddPatientComponent, dialogConfig);
 
@@ -132,7 +130,6 @@ export class PatientComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(data => {
       if(data) {
-        console.log(row);
         this.dataApi.deletePatient(row.patient_id);
         this.openSnackBar("Patient deleted successfully.", "OK")
       }
@@ -149,6 +146,12 @@ export class PatientComponent implements OnInit {
 
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
+    }
+  }
+
+  selectAll() {
+    for(var elem of this.allPatients) {
+      elem.isChecked = !elem.isChecked;
     }
   }
 }

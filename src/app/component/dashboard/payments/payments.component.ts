@@ -92,7 +92,7 @@ export class PaymentsComponent implements OnInit {
   }
 
   viewPayment(row : any) {
-    window.open('/dashboard/payments/'+row.payment_id,'_blank');
+    window.open('/payments/'+row.payment_id,'_blank');
   }
 
   deletePayments(row : any) {
@@ -108,7 +108,6 @@ export class PaymentsComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(data => {
       if(data) {
-        console.log(row);
         this.dataApi.deletePayments(row.payment_id);
         this.openSnackBar("Payment deleted successfully.", "OK")
       }

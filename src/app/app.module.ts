@@ -43,7 +43,12 @@ import { EmailComponent } from './component/auth/email/email.component';
 import { SignupComponent } from './component/auth/signup/signup.component';
 import { InvoiceComponent } from './component/dashboard/invoice/invoice.component';
 import { MatSortModule } from '@angular/material/sort';
-
+import { AddInvoiceComponent } from './component/dashboard/invoice/add-invoice/add-invoice.component';
+import { ViewInvoiceComponent } from './component/dashboard/invoice/view-invoice/view-invoice.component';
+import { DeleteInvoiceComponent } from './component/dashboard/invoice/delete-invoice/delete-invoice.component';
+import { DashboardComponent } from './component/dashboard/dashboard.component';
+import { PatientProfileComponent } from './component/dashboard/patient/patient-profile/patient-profile.component';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 @NgModule({
   declarations: [
     AppComponent,
@@ -75,6 +80,11 @@ import { MatSortModule } from '@angular/material/sort';
     EmailComponent,
     SignupComponent,
     InvoiceComponent,
+    AddInvoiceComponent,
+    ViewInvoiceComponent,
+    DeleteInvoiceComponent,
+    DashboardComponent,
+    PatientProfileComponent,
   ],
   imports: [
     BrowserModule,
@@ -85,6 +95,7 @@ import { MatSortModule } from '@angular/material/sort';
     AngularFirestoreModule,
     MaterialModule,
     MatTableModule,
+    MatCheckboxModule,
     MatSortModule,
     MatTableExporterModule,
     ReactiveFormsModule,

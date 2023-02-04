@@ -118,4 +118,24 @@ export class DataService {
     return this.afs.doc("Packagelist/"+id).delete();
   }
 
+  getAllInvoices() {
+    return this.afs.collection("Invoice/").snapshotChanges();
+  }
+
+  addInvoice(invoice : any) {
+    invoice.id = this.afs.createId();
+    return this.afs.collection("Invoice/").add(invoice);
+  }
+
+  getInvoiceById(id: string) {
+    return this.afs.doc("Invoice/"+id).valueChanges();
+  }
+
+  updateInvoice(invoice: any) {
+    return this.afs.doc("Invoice/"+invoice.id).update(invoice);
+  }
+
+  deleteInvoice(id: string) {
+    return this.afs.doc("Invoice/"+id).delete();
+  }
 }

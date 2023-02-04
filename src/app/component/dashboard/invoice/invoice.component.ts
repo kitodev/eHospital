@@ -61,7 +61,6 @@ export class InvoiceComponent implements OnInit {
       this.allInvoices = res.map((e:any) => {
         const data = e.payload.doc.data();
         data.id = e.payload.doc.id;
-        console.log(data);
         return data;
       })
 
@@ -92,7 +91,7 @@ export class InvoiceComponent implements OnInit {
   }
 
   viewInvoice(row : any) {
-    window.open('/dashboard/invoice/'+row.id,'_blank');
+    window.open('/invoice/'+row.id,'_blank');
   }
 
   editInvoice(row : any) {
@@ -105,8 +104,6 @@ export class InvoiceComponent implements OnInit {
     dialogConfig.data = row;
     dialogConfig.data.title = "Edit invoice";
     dialogConfig.data.buttonName = "Update";
-
-    console.log(dialogConfig.data);
 
     const dialogRef = this.dialog.open(AddInvoiceComponent, dialogConfig);
 
@@ -131,7 +128,6 @@ export class InvoiceComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(data => {
       if(data) {
-        console.log(row);
         this.dataApi.deleteInvoice(row.id);
         this.openSnackBar("Invoice deleted successfully.", "OK")
       }

@@ -1,3 +1,4 @@
+import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { AppointmentsComponent } from './component/dashboard/appointments/appointments.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -14,18 +15,21 @@ import { ViewDocumentsComponent } from './component/dashboard/documents/view-doc
 import { PackagelistComponent } from './component/dashboard/payments/packagelist/packagelist.component';
 import { SignupComponent } from './component/auth/signup/signup.component';
 import { InvoiceComponent } from './component/dashboard/invoice/invoice.component';
+import { ViewInvoiceComponent } from './component/dashboard/invoice/view-invoice/view-invoice.component';
 
 const routes: Routes = [
   {path : '', redirectTo : 'login', pathMatch : 'full'},
-  {path : 'dashboard', children :
+  {path : '', children :
   [
     {path : '', redirectTo: 'patient', pathMatch: 'full'},
+    {path : 'dashboard', component: DashboardComponent},
     {path : 'patient', component: PatientComponent},
     {path : 'doctor', component: DoctorComponent},
+    {path : 'invoice', component: InvoiceComponent },
+    {path : 'invoice/:id', component: ViewInvoiceComponent },
     {path : 'payments', component: PaymentsComponent},
     {path : 'appointment', component: AppointmentsComponent},
     {path : 'documents', component: DocumentsComponent},
-    {path : 'invoice/:id', component: InvoiceComponent},
     {path : 'documents/:id', component: ViewDocumentsComponent },
     {path : 'packagelist', component: PackagelistComponent},
     {path : 'appointment/:id', component: ViewAppointmentComponent },

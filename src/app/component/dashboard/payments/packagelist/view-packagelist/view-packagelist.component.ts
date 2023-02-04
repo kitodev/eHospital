@@ -40,8 +40,6 @@ export class ViewPackagelistComponent implements OnInit {
     dialogConfig.data.title = "View packagelist";
     dialogConfig.data.buttonName = "Update";
 
-    console.log(dialogConfig.data);
-
     const dialogRef = this.dialog.open(AddPackagelistComponent, dialogConfig);
 
     dialogRef.afterClosed().subscribe(data => {

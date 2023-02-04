@@ -38,7 +38,6 @@ export class AddDocumentsComponent implements OnInit {
 
   getFile(event: any) {
     this.file = event.target.files[0];
-    console.log(this.file);
   }
 
   cancelDocument() {

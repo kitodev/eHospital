@@ -74,7 +74,7 @@ export class ViewDoctorComponent implements OnInit {
   }
 
   viewPatient(row : any) {
-    window.open('/dashboard/patient/'+row.patient_id,'_blank');
+    window.open('/patient/'+row.patient_id,'_blank');
   }
 
   editPatient(row : any) {

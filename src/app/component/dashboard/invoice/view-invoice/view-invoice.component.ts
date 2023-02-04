@@ -1,4 +1,7 @@
+import { Invoice } from './../../../../shared/model/invoice';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { DataService } from 'src/app/shared/service/data.service';
 
 @Component({
   selector: 'app-view-invoice',
@@ -7,9 +10,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewInvoiceComponent implements OnInit {
   medList!:  [];
-  constructor() { }
+  invoice_id !: any;
+  invoiceObj: any;
 
-  ngOnInit(): void {
+  constructor(
+    private route: ActivatedRoute,
+    private dataApi: DataService
+  ) {
+    this.invoice_id = route.snapshot.paramMap.get('id');
   }
 
+  ngOnInit(): void {
+    this.getInvoiceById();
+  }
+
+  getInvoiceById() {
+    this.dataApi.getInvoiceById(this.invoice_id)
+    .subscribe(res => {
+      this.invoiceObj = res;
+    })
+  }
+
+  print() {
+    window.print();
+  }
 }

@@ -64,6 +64,14 @@
             <mat-error *ngIf="form.get('admission_date')?.invalid || form.get('admission_date')?.dirty || form.get('admission_date')?.touched">Choose valid admission date</mat-error>
           </mat-form-field>
 
+          <mat-form-field>
+            <mat-label>Birthdate</mat-label>
+            <input matInput [matDatepicker]="picker2" formControlName="birthdate">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
+            <mat-error *ngIf="form.get('birthdate')?.invalid || form.get('birthdate')?.dirty || form.get('birthdate')?.touched">Choose valid birthdate</mat-error>
+          </mat-form-field>
         </div>
       </mat-grid-tile>
 

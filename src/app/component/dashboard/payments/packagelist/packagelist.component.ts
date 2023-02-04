@@ -45,7 +45,6 @@ export class PackagelistComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(data => {
       if(data) {
-        console.log('PACKAGE', data);
         this.dataApi.addPackagelist(data);
         this.openSnackBar("Registration of payments is successful.", "OK")
       }
@@ -78,7 +77,7 @@ export class PackagelistComponent implements OnInit {
   }
 
   viewPackagelist(row : any) {
-    window.open('/dashboard/packagelist/'+row.id,'_blank');
+    window.open('/packagelist/'+row.id,'_blank');
   }
 
   getAllPackageList() {

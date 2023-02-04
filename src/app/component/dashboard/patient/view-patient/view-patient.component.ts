@@ -26,7 +26,7 @@ export class ViewPatientComponent implements OnInit {
     this.dataApi.getPatientById(this.patient_id).subscribe(res => {
       this.patientObj = res;
       this.patientObj.admission_date = this.patientObj.admission_date.toDate();
-      console.log(res);
+      this.patientObj.birthdate = this.patientObj.birthdate.toDate();
     })
   }
 }

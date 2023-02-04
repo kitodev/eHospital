@@ -59,7 +59,6 @@ export class AppointmentsComponent implements OnInit {
 
   getAllAppointments() {
     this.dataApi.getAllAppointment().subscribe(res => {
-      console.log(res);
       this.allAppointments = res.map((e:any) => {
         const data = e.payload.doc.data();
         data.appointment_id = e.payload.doc.id;
@@ -93,7 +92,7 @@ export class AppointmentsComponent implements OnInit {
   }
 
   viewAppointment(row : any) {
-    window.open('/dashboard/appointment/'+row.appointment_id,'_blank');
+    window.open('/appointment/'+row.appointment_id,'_blank');
   }
 
   editAppointment(row : any) {
@@ -131,7 +130,6 @@ export class AppointmentsComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(data => {
       if(data) {
-        console.log(row);
         this.dataApi.deleteAppointment(row.appointment_id);
         this.openSnackBar("Appointment deleted successfully.", "OK")
       }

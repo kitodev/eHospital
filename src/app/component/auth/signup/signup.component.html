@@ -29,7 +29,8 @@
                     placeholder=""
                     formControlName="password"
                     required
-                    type="password">
+                    [type]="showPassword ? 'text': 'password'" name="password">
+                    <mat-icon matSuffix (click)="togglePassVisible()">{{showPassword?'visibility_off':'visibility'}}</mat-icon>
             <mat-error *ngIf="form.get('password')?.invalid || form.get('password')?.dirty || form.get('password')?.touched">Enter password </mat-error>
           </mat-form-field>
           <span class="error" *ngIf="error"> {{ error }}</span>
