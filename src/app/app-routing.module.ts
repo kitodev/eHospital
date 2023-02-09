@@ -1,3 +1,4 @@
+import { UserProfileComponent } from './component/pages/user-profile/user-profile.component';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { AppointmentsComponent } from './component/dashboard/appointments/appointments.component';
 import { NgModule } from '@angular/core';
@@ -28,8 +29,9 @@ const routes: Routes = [
     {path : 'invoice', component: InvoiceComponent },
     {path : 'invoice/:id', component: ViewInvoiceComponent },
     {path : 'payments', component: PaymentsComponent},
-    {path : 'appointment', component: AppointmentsComponent},
-    {path : 'documents', component: DocumentsComponent},
+    {path : 'user-profile', component: UserProfileComponent },
+    {path : 'appointment', component: AppointmentsComponent },
+    // {path : 'documents', component: DocumentsComponent},
     {path : 'documents/:id', component: ViewDocumentsComponent },
     {path : 'packagelist', component: PackagelistComponent},
     {path : 'appointment/:id', component: ViewAppointmentComponent },

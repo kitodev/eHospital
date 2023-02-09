@@ -6,7 +6,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { DataService } from 'src/app/shared/service/data.service';
 import { AddDocumentsComponent } from './add-documents/add-documents.component';
-import { Documents } from 'src/app/shared/model/documents';
+import { Documents } from 'src/app/shared/model/interfaces';
 import { DeleteDocumentsComponent } from './delete-documents/delete-documents.component';
 
 @Component({

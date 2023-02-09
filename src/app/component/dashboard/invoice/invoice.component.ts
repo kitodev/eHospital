@@ -1,6 +1,6 @@
 import { DeleteInvoiceComponent } from './delete-invoice/delete-invoice.component';
 import { AddInvoiceComponent } from './add-invoice/add-invoice.component';
-import { Invoice } from './../../../shared/model/invoice';
+import { Invoice } from './../../../shared/model/interfaces';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
@@ -8,7 +8,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { DataService } from 'src/app/shared/service/data.service';
-import { Doctor } from 'src/app/shared/model/doctor';
+import { Doctor } from 'src/app/shared/model/interfaces';
 
 @Component({
   selector: 'app-invoice',

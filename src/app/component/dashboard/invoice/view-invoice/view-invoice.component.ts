@@ -1,4 +1,4 @@
-import { Invoice } from './../../../../shared/model/invoice';
+import { Invoice } from './../../../../shared/model/interfaces';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DataService } from 'src/app/shared/service/data.service';

@@ -5,9 +5,9 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { Appointments } from 'src/app/shared/model/appointments';
-import { Doctor } from 'src/app/shared/model/doctor';
-import { Payments } from 'src/app/shared/model/payments';
+import { Appointments } from 'src/app/shared/model/interfaces';
+import { Doctor } from 'src/app/shared/model/interfaces';
+import { Payments } from 'src/app/shared/model/interfaces';
 import { DataService } from 'src/app/shared/service/data.service';
 import { AddPaymentsComponent } from './add-payments/add-payments.component';
 

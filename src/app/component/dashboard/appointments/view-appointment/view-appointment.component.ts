@@ -1,4 +1,4 @@
-import { Appointments } from './../../../../shared/model/appointments';
+import { Appointments } from './../../../../shared/model/interfaces';
 import { AddAppointmentComponent } from './../add-appointment/add-appointment.component';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';

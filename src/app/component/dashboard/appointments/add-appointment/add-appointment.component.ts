@@ -42,6 +42,10 @@ export class AddAppointmentComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllDoctors();
+    this.formBuilder();
+  }
+
+  formBuilder() {
     this.form = this.fb.group({
       appointment_id: [this.appointment_id, []],
       appointment_name : [this. appointment_name, [Validators.required]],

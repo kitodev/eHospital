@@ -6,10 +6,9 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { Doctor } from 'src/app/shared/model/doctor';
-import { Patient } from 'src/app/shared/model/patient';
 import { DataService } from 'src/app/shared/service/data.service';
-import { Appointments } from 'src/app/shared/model/appointments';
+import { Appointments } from 'src/app/shared/model/interfaces';
+import { Doctor } from 'src/app/shared/model/interfaces';
 
 @Component({
   selector: 'app-appointments',
@@ -20,7 +19,7 @@ export class AppointmentsComponent implements OnInit {
 
   allAppointments : Appointments[] = [];
   allDoctors : Doctor[] = [];
-  displayedColumns: string[] = ['name', 'mobile', 'email', 'injury', 'visit_time', 'doctor','action'];
+  displayedColumns: string[] = ['appointment_name', 'mobile', 'email', 'injury', 'visit_time', 'doctor','action'];
   dataSource!: MatTableDataSource<Appointments>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -33,7 +32,6 @@ export class AppointmentsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    //this.getAllPatients();
     this.getAllAppointments();
     this.getAllDoctors();
   }

@@ -4,7 +4,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { Doctor } from 'src/app/shared/model/doctor';
+import { Doctor } from 'src/app/shared/model/interfaces';
 import { DataService } from 'src/app/shared/service/data.service';
 import { AddDoctorComponent } from './add-doctor/add-doctor.component';
 import { DeleteDoctorComponent } from './delete-doctor/delete-doctor.component';

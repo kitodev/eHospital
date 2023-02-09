@@ -1,5 +1,5 @@
 import { DeletePackagelistComponent } from './delete-packagelist/delete-packagelist.component';
-import { Packagelist } from './../../../../shared/model/packagelist';
+import { Packagelist } from './../../../../shared/model/interfaces';
 import { AddPackagelistComponent } from './add-packagelist/add-packagelist.component';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';

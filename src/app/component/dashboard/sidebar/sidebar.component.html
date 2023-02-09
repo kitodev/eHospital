@@ -13,7 +13,7 @@
       <a mat-list-item routerLinkActive="active" routerLink="invoice"> <mat-icon>receipt_long</mat-icon> Invoice</a>
       <a mat-list-item routerLinkActive="active" routerLink="payments"> <mat-icon>credit_card</mat-icon> Payments</a>
       <a mat-list-item routerLinkActive="active" routerLink="packagelist"> <mat-icon>inventory</mat-icon> Package List</a>
-      <a mat-list-item routerLinkActive="active" routerLink="documents"> <mat-icon>article</mat-icon> Documents</a>
+      <!-- <a mat-list-item routerLinkActive="active" routerLink="documents"> <mat-icon>article</mat-icon> Documents</a> -->
       <a mat-list-item routerLinkActive="active" (click)="logout()"> <mat-icon>logout</mat-icon> Sign out</a>
     </mat-nav-list>
   </mat-sidenav>
@@ -28,9 +28,30 @@
         <mat-icon aria-label="Side nav toggle icon"><mat-icon>menu</mat-icon></mat-icon>
       </button>
       <span></span>
-
+      <span>Settings</span>
     </mat-toolbar>
     <!-- Add Content Here -->
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+         <li class="nav-item dropdown pe-3">
+            <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown"> <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle"> <span class="d-none d-md-block dropdown-toggle ps-2">Jassa</span> </a>
+            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+               <li class="dropdown-header">
+                  <h6>Kornel</h6>
+                  <span>Admin</span>
+               </li>
+               <li>
+                  <hr class="dropdown-divider">
+               </li>
+               <li> <a class="dropdown-item d-flex align-items-center" routerLink="/user-profile"> <i class="bi bi-gear"></i> <span>Account Settings</span> </a></li>
+               <li>
+                  <hr class="dropdown-divider">
+               </li>
+               <li> <a class="dropdown-item d-flex align-items-center" (click)="logout()" routerLink="/"> <i class="bi bi-box-arrow-right"></i> <span>Sign Out</span> </a></li>
+            </ul>
+         </li>
+      </ul>
+   </nav>
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>

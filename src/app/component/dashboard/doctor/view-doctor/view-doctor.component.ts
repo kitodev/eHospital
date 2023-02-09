@@ -5,7 +5,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute } from '@angular/router';
-import { Patient } from 'src/app/shared/model/patient';
+import { Patient } from 'src/app/shared/model/interfaces';
 import { DataService } from 'src/app/shared/service/data.service';
 import { AddPatientComponent } from '../../patient/add-patient/add-patient.component';
 

@@ -49,6 +49,7 @@ import { DeleteInvoiceComponent } from './component/dashboard/invoice/delete-inv
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { PatientProfileComponent } from './component/dashboard/patient/patient-profile/patient-profile.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { UserProfileComponent } from './component/pages/user-profile/user-profile.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -85,6 +86,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     DeleteInvoiceComponent,
     DashboardComponent,
     PatientProfileComponent,
+    UserProfileComponent,
   ],
   imports: [
     BrowserModule,
